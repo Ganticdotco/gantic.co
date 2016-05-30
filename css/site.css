@@ -1,0 +1,391 @@
+.clearfix:after {
+  content:"";
+  display: block;
+  clear: both;
+}
+
+
+
+html {
+  font-size: 125%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  width: calc(100% - 1rem);
+  height: 100%;
+  overflow: auto;
+  margin: .5rem;
+}
+
+.container {
+  margin-left: .5rem;
+  margin-top: 9.1rem;
+  width: calc(100% - 1rem);
+}
+
+.profile-image {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  height: 14rem;
+  background-image: url(../img/Jai-Mitchell.jpg);
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+a, a:link, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+}
+
+a:link {
+  font-weight: 500;
+  color: #A5A5A5;
+  transition: color .15s linear;
+}
+
+a:visited {
+  color: #A5A5A5;
+}
+
+a:hover, a:focus {
+  color: #2EE8AD;
+  transition: color .3s linear;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #191919;
+  transition: color .3s linear;
+}
+
+
+h1, h2, h3 {
+  font-family: "tiempos text", georgia, serif;
+  color: #383838;
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active, h1 a:focus {
+  font-family: "tiempos text", georgia, serif;
+  font-size: .9rem;
+  position: fixed;
+  top: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+h1 span {
+  opacity: .333;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: white;
+}
+
+h2 span {
+  display: block;
+}
+
+h4, h5 {
+  font-family: "national", "helvetica neue", helvetica, sans-serif;
+  font-weight: 500;
+  font-size: .8rem;
+  color: #808080;
+}
+
+h4 {
+  opacity: .67;
+  margin-top: 1.2em;
+  margin-bottom: .8em;
+}
+
+h5 {
+  margin-top: 1.2em;
+  margin-bottom: .8em;
+}
+
+p {
+  font-family: "national", "helvetica neue", helvetica, sans-serif;
+  font-weight: 100;
+  line-height: 1.2em;
+  color: #404040;
+}
+
+
+footer {
+  margin-top: 4rem;
+}
+
+.contact-icon {
+  fill:#bababa;
+  fill-rule:evenodd;
+  transition: fill .3s linear;
+}
+
+.contact-details-item {
+  display: inline-block;
+  margin: .2rem 1rem 1rem 0;
+}
+
+.contact-details-item.contact-details-item-socials {
+  display: block;
+  margin: 1.2rem 0 1.8rem 0;
+}
+
+.contact-details-item h4 {
+  margin-top: .8rem;
+}
+
+.contact-details-item h3 {
+  display: inline-block;
+  transition: color .2s linear;
+}
+
+.contact-details-item h3 span {
+  opacity: .4;
+  transition: color .1s linear, opacity .2s linear;
+}
+
+.contact-details-icon {
+    display: inline-block;
+    width: 1.4rem;
+    text-align: right;
+    vertical-align: text-top;
+    box-sizing: border-box;
+}
+
+.contact-details-item-twitter .contact-details-icon {
+  padding-right:.25rem;
+}
+
+.contact-details-item-email .contact-details-icon {
+  padding-right:.3rem;
+}
+
+.contact-details-item-twitter .info {
+    margin-left: -.15rem;
+}
+
+.contact-details-labels {
+  display: inline-block;
+}
+
+.contact-details-item .label {
+  display: none;
+}
+
+.contact-details-item-email:hover .contact-icon {
+  fill: #2EE8AD;
+}
+
+.contact-details-item-twitter:hover .contact-icon {
+  fill: #55acee;
+}
+
+.contact-details-item:hover {
+  text-decoration: none;
+}
+
+.contact-details-item-email:hover h3 {
+  color: #2EE8AD;
+}
+
+.contact-details-item-twitter:hover h3 {
+  color: #55acee;
+}
+
+.contact-details-item:hover h3 span {
+  /*color: #808080;*/
+  opacity: .5;
+}
+
+
+
+
+
+.socials-icon {
+  fill:#808080;
+  fill-rule:evenodd;
+  transition: fill .2s linear;
+}
+
+.socials-info:hover .socials-icon {
+  fill:#bababa;
+}
+
+.socials-info:hover .socials-item:hover,
+.socials-info .socials-item:focus {
+  transform: scale(1.333) translateY(.01rem);
+}
+
+.socials-info .socials-instagram #insta-gradient-bg {
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.socials-info:hover .socials-facebook:hover .socials-icon,
+.socials-info .socials-facebook:focus .socials-icon {
+  fill:#3B579D;
+}
+
+.socials-info:hover .socials-linkedin:hover .socials-icon,
+.socials-info .socials-linkedin:focus .socials-icon {
+  fill:#0077B5;
+}
+
+.socials-info:hover .socials-instagram:hover #insta-gradient-bg,
+.socials-info .socials-instagram:focus #insta-gradient-bg {
+  opacity: 1;
+}
+
+.socials-info:hover .socials-dribbble:hover .socials-icon,
+.socials-info .socials-dribbble:focus .socials-icon {
+  fill:#ea4c89;
+}
+
+.socials-info:hover .socials-github:hover .socials-icon,
+.socials-info .socials-github:focus .socials-icon {
+  fill:#6cc644;
+}
+
+.socials-info:hover .socials-medium:hover .socials-icon,
+.socials-info .socials-medium:focus .socials-icon {
+  fill:#0BE370;
+}
+
+.socials-info:hover .socials-pocket:hover .socials-icon,
+.socials-info .socials-pocket:focus .socials-icon {
+  fill:#ef4056;
+}
+
+.socials-info a.socials-item {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: calc(10% - .8rem);
+  text-align: center;
+  transition: transform .2s ease-in-out;
+  /*vertical-align: middle;*/
+}
+
+.socials-item svg {
+    vertical-align: middle;
+}
+
+
+
+
+/*  Copyright  */
+
+.copyright {
+  display: block;
+  font-size: .6rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  opacity: .67;
+}
+
+@media all and (min-width: 24em) {
+  .container {
+    margin-left: .5rem;
+    margin-top: 12rem;
+    width: calc(100% - 1rem);
+  }
+
+  h2 span {
+    display: inline;
+  }
+
+}
+
+@media all and (min-width: 32em) {
+  .container {
+    margin-left: calc(10% + .5rem);
+    margin-top: 12rem;
+    width: calc(80% - 1rem);
+  }
+
+}
+
+@media all and (min-width: 40em) {
+  .container {
+    margin-left: calc(20% + .5rem);
+    margin-top: 12rem;
+    width: calc(60% - 1rem);
+  }
+
+}
+
+@media all and (min-width: 50em) {
+  .container {
+    margin-left: calc(40% + .5rem);
+    margin-top: 33vh;
+    width: calc(50% - 1rem);
+  }
+
+  .profile-image {
+    position: fixed;
+    top:.5rem;
+    left: .5rem;
+    bottom: .5rem;
+    right: auto;
+    height: auto;
+    width: calc(40% - 1rem);
+  }
+
+
+  h1 a:link, h1 a:visited, h1 a:hover, h1 a:active, h1 a:focus {
+    top: 2em;
+    color: #383838;
+  }
+
+  h2 {
+    color: #383838;
+  }
+
+  .copyright {
+    position: fixed;
+    color: white;
+    text-align: left;
+    bottom: 0;
+    left: 1rem;
+    opacity: .67;
+  }
+
+  .copyright a:link {
+    color: white;
+  }
+
+  .copyright a:hover {
+    opacity: .5;
+  }
+
+  .copyright a:active, .copyright a:focus {
+    opacity: 1;
+  }
+
+}
+
+@media all and (min-width: 64em) {
+  .container {
+    margin-left: calc(50% + .5rem);
+    margin-top: 33vh;
+    width: calc(40% - 1rem);
+    max-width: 32rem;
+  }
+}
+
+@media all and (min-width: 72em) and (min-height: 48em) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
