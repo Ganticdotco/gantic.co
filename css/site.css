@@ -123,6 +123,7 @@ h2 span {
 h4, h5 {
   font-family: 'national', 'National bold', "helvetica neue", helvetica, sans-serif;
   font-weight: 600;
+  -webkit-font-smoothing: antialiased;
   font-size: .8rem;
   color: #808080;
 }
