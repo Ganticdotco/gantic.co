@@ -1,3 +1,28 @@
+@font-face {
+  font-family: 'Tiempos headline';
+  src: url('typefaces/TiemposHeadlineWeb-Bold.eot'); /* IE9 Compat Modes */
+  src: url('typefaces/TiemposHeadlineWeb-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('typefaces/TiemposHeadlineWeb-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('typefaces/TiemposHeadlineWeb-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+}
+
+@font-face {
+  font-family: 'National book';
+  src: url('typefaces/NationalWeb-Book.eot'); /* IE9 Compat Modes */
+  src: url('typefaces/NationalWeb-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('typefaces/NationalWeb-Book.woff2') format('woff2'), /* Super Modern Browsers */
+       url('typefaces/NationalWeb-Book.woff') format('woff'); /* Pretty Modern Browsers */
+}
+
+@font-face {
+  font-family: 'National bold';
+  src: url('typefaces/NationalWeb-Bold.eot'); /* IE9 Compat Modes */
+  src: url('typefaces/NationalWeb-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('typefaces/NationalWeb-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('typefaces/NationalWeb-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+}
+
+
 .clearfix:after {
   content:"";
   display: block;
@@ -43,7 +68,8 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 }
 
 a:link {
-  font-weight: 500;
+  font-family: 'national', 'National bold', "helvetica neue", helvetica, sans-serif;
+  font-weight: 600;
   color: #A5A5A5;
   transition: color .15s linear;
 }
@@ -65,14 +91,14 @@ a:active {
 
 
 h1, h2, h3 {
-  font-family: "tiempos text", georgia, serif;
+  font-family: 'tiempos text', 'Tiempos headline',  georgia, serif;
   color: #383838;
   margin: 0;
   font-weight: 600;
 }
 
 h1 a:link, h1 a:visited, h1 a:hover, h1 a:active, h1 a:focus {
-  font-family: "tiempos text", georgia, serif;
+  font-family: 'tiempos text', 'Tiempos headline',  georgia, serif;
   font-size: .9rem;
   position: fixed;
   top: 1em;
@@ -95,8 +121,8 @@ h2 span {
 }
 
 h4, h5 {
-  font-family: "national", "helvetica neue", helvetica, sans-serif;
-  font-weight: 500;
+  font-family: 'national', 'National bold', "helvetica neue", helvetica, sans-serif;
+  font-weight: 600;
   font-size: .8rem;
   color: #808080;
 }
@@ -113,8 +139,8 @@ h5 {
 }
 
 p {
-  font-family: "national", "helvetica neue", helvetica, sans-serif;
-  font-weight: 100;
+  font-family: 'national', 'National book', "helvetica neue", helvetica, sans-serif;
+  font-weight: 400;
   line-height: 1.2em;
   color: #404040;
 }
