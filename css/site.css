@@ -180,7 +180,7 @@ footer {
 
 .contact-details-item h3 span {
   opacity: .4;
-  transition: color .1s linear, opacity .2s linear;
+  transition: all .2s linear;
 }
 
 .contact-details-icon {
@@ -223,17 +223,16 @@ footer {
   text-decoration: none;
 }
 
-.contact-details-item-email:hover h3 {
+.contact-details-item:hover h3 {
+  color: #666666;
+}
+
+.contact-details-item-email:hover h3 span {
   color: #2EE8AD;
 }
 
-.contact-details-item-twitter:hover h3 {
+.contact-details-item-twitter:hover h3 span {
   color: #55acee;
-}
-
-.contact-details-item:hover h3 span {
-  /*color: #808080;*/
-  opacity: .5;
 }
 
 
@@ -252,7 +251,7 @@ footer {
 
 .socials-info:hover .socials-item:hover,
 .socials-info .socials-item:focus {
-  transform: scale(1.333) translateY(.01rem);
+  transform: scale(1.333) translateY(-.1rem);
 }
 
 .socials-info .socials-instagram #insta-gradient-bg {
