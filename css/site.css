@@ -22,15 +22,6 @@
        url('typefaces/NationalWeb-Bold.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
-
-.clearfix:after {
-  content:"";
-  display: block;
-  clear: both;
-}
-
-
-
 html {
   font-size: 125%;
   height: 100%;
@@ -39,6 +30,7 @@ html {
 
 body {
   position: relative;
+  width: 99%;
   width: calc(100% - 1rem);
   height: 100%;
   overflow: auto;
@@ -48,6 +40,7 @@ body {
 .container {
   margin-left: .5rem;
   margin-top: 9rem;
+  width: 99%;
   width: calc(100% - 1rem);
 }
 
@@ -68,7 +61,7 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 }
 
 a:link {
-  font-family: 'National bold', "helvetica neue", helvetica, sans-serif;
+  font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   color: #A5A5A5;
@@ -127,7 +120,7 @@ h3 {
 }
 
 h4, h5 {
-  font-family: 'National bold', "helvetica neue", helvetica, sans-serif;
+  font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   font-size: .8rem;
@@ -146,7 +139,7 @@ h5 {
 }
 
 p {
-  font-family: 'National book', "helvetica neue", helvetica, sans-serif;
+  font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.2em;
   color: #404040;
@@ -240,8 +233,7 @@ footer {
 }
 
 
-
-
+/*  Social icon colour fills on hover  */
 
 .socials-icon {
   fill:#808080;
@@ -325,7 +317,12 @@ footer {
   opacity: .67;
 }
 
-@media all and (min-width: 24em) {
+/*---------------------*/
+/*    Media queries    */
+/*---------------------*/
+
+@media all and (min-width: 24em) { /* 24 x 16 = 384 */
+  /* Remove inline-block from h2, adjust container accordingly */
   .container {
     margin-left: .5rem;
     margin-top: 11.7rem;
@@ -338,7 +335,8 @@ footer {
 
 }
 
-@media all and (min-width: 32em) {
+@media all and (min-width: 32em) { /* 32 x 16 = 512 */
+  /* Add a column of whitespace either side of container */
   .container {
     margin-left: calc(10% + .5rem);
     width: calc(80% - 1rem);
@@ -346,7 +344,8 @@ footer {
 
 }
 
-@media all and (min-width: 40em) {
+@media all and (min-width: 40em) { /* 40 x 16 = 640 */
+  /* Increase to 2 columns of whitespace either side of container */
   .container {
     margin-left: calc(20% + .5rem);
     width: calc(60% - 1rem);
@@ -354,7 +353,10 @@ footer {
 
 }
 
-@media all and (min-width: 50em) {
+@media all and (min-width: 50em) { /* 50 x 16 = 800 */
+  /* Switch to wide mode, image on left, content on right
+     Change colour of h1 and h2 now on white bg
+     Change colour and position of copyright notice */
   .container {
     margin-left: calc(40% + .5rem);
     margin-top: 33vh;
@@ -404,7 +406,8 @@ footer {
 
 }
 
-@media all and (min-width: 64em) {
+@media all and (min-width: 64em) { /* 64 x 16 = 1024 */
+  /* Add a column of whitespace either side of container and max-width it at 640 */
   .container {
     margin-left: calc(50% + .5rem);
     margin-top: 33vh;
@@ -413,7 +416,8 @@ footer {
   }
 }
 
-@media all and (min-width: 72em) and (min-height: 48em) {
+@media all and (min-width: 72em) and (min-height: 48em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
+  /* Lock contact details footer to bottom of page on larger screens */
   footer {
     position: absolute;
     bottom: 0;
