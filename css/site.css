@@ -35,6 +35,12 @@ body {
   height: 100%;
   overflow: auto;
   margin: .5rem;
+
+  font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: #404040;
+  background: #FFF;
 }
 
 .container {
@@ -139,10 +145,6 @@ h5 {
 }
 
 p {
-  font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.2em;
-  color: #404040;
 }
 
 
@@ -294,6 +296,7 @@ footer {
   display: inline-block;
   width: 1rem;
   height: 1rem;
+  margin-right: 9%;
   margin-right: calc(10% - .8rem);
   text-align: center;
   transition: transform .2s ease-in-out;
@@ -317,6 +320,287 @@ footer {
   opacity: .67;
 }
 
+
+/*  Contact form overlay  */
+
+#overlay-contact-form {
+  position: fixed;
+  top:.5rem;
+  right: .5rem;
+  bottom: .5rem;
+  left: .5rem;
+  background-color: rgba(0,0,0,.95);
+  z-index: 99999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s linear, visibility 0s 0.3s;
+}
+
+#overlay-contact-form.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+#overlay-contact-form .contact-close {
+  font-size: .8rem;
+  text-align: center;
+  padding-top: .7rem;
+
+  box-sizing: border-box;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: solid 2px grey;
+  position: absolute;
+  bottom: 0;
+  bottom: calc(25vh - 8rem);
+  right: 50%;
+  transform: translate(1.5rem, -1.5rem);
+  transition: bottom .3s cubic-bezier(.7,0,1,1);
+}
+
+#overlay-contact-form.active .contact-close {
+  bottom: 2rem;
+  bottom: calc(25vh - 6rem);
+  transition: bottom .4s cubic-bezier(0,0,0,1);
+}
+
+/*  Contact Form  */
+
+fieldset, form, label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /*-webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-before: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  -webkit-padding-after: 0;
+  border-width: 0;
+  border-color: transparent;*/
+}
+
+#overlay-contact-form #contact-form {
+  position: relative;
+  padding-top: 2.4rem;
+  width: 98%;
+  width: calc(100% - 3rem);
+  margin-left: 1.5rem;
+  margin-top: 50vh;
+  transform: translateY(-6rem);
+  transition: transform .3s cubic-bezier(.7,0,1,1);
+}
+
+#overlay-contact-form.active #contact-form {
+  transform: translateY(-8rem);
+  transition: transform .4s cubic-bezier(0,0,0,1);
+}
+
+
+#contact-form h3 {
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  color: #bababa;
+}
+
+.form-ready .contact-default {
+  opacity: 1;
+  top: 0;
+  transition: top .2s ease-out, opacity .2s linear;
+}
+
+.form-ready .contact-sent {
+  opacity: 0;
+  top: 2rem;
+  transition: top .2s ease-in, opacity .2s linear;
+}
+
+.form-sent .contact-default {
+  opacity: 0;
+  top: -2rem;
+  transition: top .2s ease-in, opacity .2s linear;
+}
+
+.form-sent .contact-sent {
+  opacity: 1;
+  top: 0;
+  transition: top .2s ease-out, opacity .2s linear;
+}
+
+#contact-form fieldset {
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-top: 1rem;
+  /*overflow: hidden;*/
+  box-shadow: none;
+  transition:
+    all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+  #overlay-contact-form.active fieldset {
+    margin-top: .2rem;
+    transition:
+      all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+
+#contact-form fieldset:hover {
+  /*transform: scale(1.05);*/
+  /*border-radius: 1rem;*/
+  /*box-shadow: 0 .2rem .3rem 0 rgba(0,0,0,.25);*/
+}
+
+#contact-form fieldset.form-message:hover {
+  /*top:.1rem;*/
+}
+
+#contact-form input,
+#contact-form textarea {
+  display: block;
+  padding: 0 .6em 0  .6em;
+  width: 100%;
+  /*margin: .2rem 0 0;*/
+  box-sizing: border-box;
+  font-family:  "national", "helvetica neue", helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  color: white;
+  background: rgba(64,64,64,.5);
+  border: 0 none;
+  z-index: 1;
+  transition: background .3s linear;
+  outline: none;
+  text-indent: 2.6em;
+}
+
+#contact-form input {
+  height: 2rem;
+}
+
+#contact-form input:hover,
+#contact-form textarea:hover {
+  background: rgba(128,128,128,.15);
+}
+
+#contact-form label {
+  position: absolute;
+  font-size: .8rem;
+  color: #fff;
+  font-weight: 500;
+  top: .4rem;
+  left: .6rem;
+  z-index: -1;
+  transition: .2s ease-in-out;
+}
+
+#contact-form textarea {
+  height: 6rem;
+  padding-top: .4rem;
+  resize: vertical;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  box-shadow: 0 0 .1rem .1rem #65B0E8;
+}
+
+#contact-form input:focus + label,
+#contact-form textarea:focus + label {
+  /*font-size: .6rem;*/
+  transform: scale(.75);
+  color: white;
+  left: .4rem;
+  transition: all .2s ease-in-out;
+}
+
+#contact-form input:valid + label,
+#contact-form input:focus + label,
+#contact-form textarea:valid + label,
+#contact-form textarea:focus + label {
+  transform: scale(.75);
+  left: .4rem;
+  transition: all .2s ease-in-out;
+}
+
+#contact-form input:valid + label,
+#contact-form textarea:valid + label {
+  color: #666666;
+}
+
+#contact-form button {
+  position: absolute;
+  border: 0 none;
+  z-index: 1;
+}
+
+.form-subject input {
+  border-top-left-radius: .4rem;
+  border-top-right-radius: .4rem;
+
+}
+
+.form-message textarea {
+  border-bottom-right-radius: .4rem;
+  border-bottom-left-radius: .4rem;
+}
+
+
+.contact-reset {
+  display: none;
+}
+
+#contact-form .send-message {
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  font-size: 0;
+  border-radius: 50%;
+  background-color: #666666;
+  box-shadow: none;
+  transition:
+    all .2s cubic-bezier(.87,-.41,.19,1.44),
+    color .3s linear;*/
+}
+
+#contact-form:valid .send-message {
+  height: 3rem;
+  width: 3rem;
+  bottom: -0.67rem;
+  right: -0.67rem;
+  font-size: .8rem;
+  background-color: white;
+  box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.15);
+  /*transition:
+    box-shadow .4s cubic-bezier(.87,-.41,.19,1.44),
+    scale .4s cubic-bezier(.87,-.41,.19,1.44),
+    width .4s cubic-bezier(.87,-.41,.19,1.44),
+    height .4s cubic-bezier(.87,-.41,.19,1.44),
+    bottom .4s cubic-bezier(.87,-.41,.19,1.44),
+    right .4s cubic-bezier(.87,-.41,.19,1.44),
+    background-color .3s linear;*/
+    transition:
+      all .4s cubic-bezier(.87,-.41,.19,1.44),
+      background-color .3s linear;
+}
+
+#contact-form:valid .send-message:enabled:hover {
+  transform: scale(1.1);
+  box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
 /*---------------------*/
 /*    Media queries    */
 /*---------------------*/
@@ -326,6 +610,7 @@ footer {
   .container {
     margin-left: .5rem;
     margin-top: 11.7rem;
+    width: 99%;
     width: calc(100% - 1rem);
   }
 
@@ -338,18 +623,36 @@ footer {
 @media all and (min-width: 32em) { /* 32 x 16 = 512 */
   /* Add a column of whitespace either side of container */
   .container {
+    margin-left: 11%;
     margin-left: calc(10% + .5rem);
+    width: 79%;
     width: calc(80% - 1rem);
   }
+
+  #contact-form {
+    width: 80%;
+    width: calc(80vw - 1rem);
+    margin-left: 10%;
+  }
+
 
 }
 
 @media all and (min-width: 40em) { /* 40 x 16 = 640 */
   /* Increase to 2 columns of whitespace either side of container */
   .container {
+    margin-left: 21%;
     margin-left: calc(20% + .5rem);
+    width: 59%;
     width: calc(60% - 1rem);
   }
+
+  #contact-form {
+    width: 60%;
+    width: calc(60vw - 1rem);
+    margin-left: 20%;
+  }
+
 
 }
 
@@ -358,8 +661,10 @@ footer {
      Change colour of h1 and h2 now on white bg
      Change colour and position of copyright notice */
   .container {
+    margin-left: 41%;
     margin-left: calc(40% + .5rem);
     margin-top: 33vh;
+    width: 49%;
     width: calc(50% - 1rem);
   }
 
@@ -370,6 +675,7 @@ footer {
     bottom: .5rem;
     right: auto;
     height: auto;
+    width: 39%;
     width: calc(40% - 1rem);
   }
 
@@ -409,11 +715,26 @@ footer {
 @media all and (min-width: 64em) { /* 64 x 16 = 1024 */
   /* Add a column of whitespace either side of container and max-width it at 640 */
   .container {
+    margin-left: 49%;
     margin-left: calc(50% + .5rem);
     margin-top: 33vh;
+    width: 39%;
     width: calc(40% - 1rem);
     max-width: 32rem;
   }
+
+  #overlay-contact-form {
+    right: auto;
+    width: 39%;
+    width: calc(40% - 1rem);
+  }
+
+  #contact-form {
+    width: 98%;
+    width: calc(100% - 3rem);
+    margin-left: 1.5rem;
+  }
+
 }
 
 @media all and (min-width: 72em) and (min-height: 48em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */

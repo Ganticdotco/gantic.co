@@ -24,6 +24,28 @@
 			<p>Until then, I’m always up for a chat about design, so please, <a href="mailto:jai@gantic.co">get in touch</a>.</p>
 		</header>
 
+		<section id="overlay-contact-form" class="">
+			<a class="contact-close" href="#">Close</a>
+			<form id="contact-form" class="contact-direct form-ready">
+				<h3 class="contact-default">Drop me a message</h3>
+				<h3 class="contact-sent">Message sent</h3>
+				<fieldset class="form-subject">
+					<input type="text" name="Subject" form="contact-form" required></input>
+					<label>Subject</label>
+				</fieldset>
+				<fieldset class="form-from">
+					<input type="text" name="From" autocomplete="name" form="contact-form" required></input>
+					<label>From</label>
+				</fieldset>
+				<fieldset class="form-message">
+					<textarea type="text" name="Message" form="contact-form" required></textarea>
+					<label>Message</label>
+				</fieldset>
+				<button class="send-message" type="submit" form="contact-form">Send</button>
+				<button class="contact-reset">Send another</button>
+			</form>
+		</section>
+
 		<footer>
 
 			<h5>Contact me on</h5>
