@@ -356,7 +356,7 @@ footer {
   border: solid 2px grey;
   position: absolute;
   bottom: 0;
-  bottom: calc(25vh - 8rem);
+  bottom: calc(15vh - 6rem);
   right: 50%;
   transform: translate(1.5rem, -1.5rem);
   transition: bottom .3s cubic-bezier(.7,0,1,1);
@@ -364,7 +364,7 @@ footer {
 
 #overlay-contact-form.active .contact-close {
   bottom: 2rem;
-  bottom: calc(25vh - 6rem);
+  bottom: calc(15vh - 4rem);
   transition: bottom .4s cubic-bezier(0,0,0,1);
 }
 
@@ -390,13 +390,19 @@ fieldset, form, label {
   width: 98%;
   width: calc(100% - 3rem);
   margin-left: 1.5rem;
-  margin-top: 50vh;
-  transform: translateY(-6rem);
+  margin-top: 40vh;
+  transform: translateY(-4rem);
   transition: transform .3s cubic-bezier(.7,0,1,1);
+
+/*
+  bottom: 0;
+  transform: translateY(calc(-50vh + 6rem));
+*/
+
 }
 
 #overlay-contact-form.active #contact-form {
-  transform: translateY(-8rem);
+  transform: translateY(-6rem);
   transition: transform .4s cubic-bezier(0,0,0,1);
 }
 
@@ -630,7 +636,7 @@ fieldset, form, label {
     width: calc(80% - 1rem);
   }
 
-  #contact-form {
+  #overlay-contact-form #contact-form {
     width: 80%;
     width: calc(80vw - 1rem);
     margin-left: 10%;
@@ -648,7 +654,7 @@ fieldset, form, label {
     width: calc(60% - 1rem);
   }
 
-  #contact-form {
+  #overlay-contact-form #contact-form {
     width: 60%;
     width: calc(60vw - 1rem);
     margin-left: 20%;
@@ -728,6 +734,15 @@ fieldset, form, label {
     position: fixed;
     top: 1em;
   }
+
+  #overlay-contact-form #contact-form {
+    margin-top: 33vh;
+    transform: translateY(0);
+  }
+
+  #overlay-contact-form.active #contact-form {
+    transform: translateY(-2rem);
+  }
 }
 
 
@@ -748,12 +763,37 @@ fieldset, form, label {
     width: calc(40% - 1rem);
   }
 
-  #contact-form {
+  #overlay-contact-form #contact-form {
     width: 98%;
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
   }
 
+}
+
+@media all and (min-width: 80em) { /* 80 x 16 = 1280 */
+  #overlay-contact-form #contact-form {
+    width: 24rem;
+    left: calc(50% - 1.5rem);
+    transform: translate(-12rem, -4rem);
+    transition: transform .4s cubic-bezier(0,0,0,1);
+  }
+
+  #overlay-contact-form.active #contact-form {
+    transform: translate(-12rem, -6rem);
+    transition: transform .4s cubic-bezier(0,0,0,1);
+  }
+}
+
+@media all and (min-width: 80em) and (min-height: 40em) { /* WIDTH: 50 x 16 = 800 HEIGHT: 40 x 16 = 640 */
+  #overlay-contact-form #contact-form {
+    margin-top: 33vh;
+    transform: translate(-12rem, 0);
+  }
+
+  #overlay-contact-form.active #contact-form {
+    transform: translate(-12rem, -2rem);
+  }
 }
 
 @media all and (min-width: 72em) and (min-height: 48em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
