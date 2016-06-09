@@ -192,7 +192,8 @@ footer {
 }
 
 .contact-details-item-twitter .contact-details-icon {
-  padding-right:.25rem;
+  padding-right: .15rem;
+  padding-top: .25rem;
 }
 
 .contact-details-item-email .contact-details-icon {
@@ -219,7 +220,7 @@ footer {
   fill: #55acee;
 }
 
-.contact-details-item:hover {
+.contact-details-item:hover, .contact-details-item:active, .contact-details-item:focus {
   text-decoration: none;
 }
 
