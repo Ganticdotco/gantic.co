@@ -15,9 +15,9 @@ if(IsInjected($subject)||IsInjected($from)||IsInjected($message))
 }
 
 $email_from = 'form-submission@gantic.co';
-$email_subject = "Gantic.co form submission";
-$email_body = "From: $name.\n".
-    "Message:\n $message".
+$email_subject = "Gantic.co form: $subject";
+$email_body = "From: $from.\n".
+    "Message:\n $message";
 
 $to = "jai@gantic.co";
 $headers = "From: $email_from \r\n";
@@ -25,7 +25,7 @@ $headers = "From: $email_from \r\n";
 //Send the email!
 mail($to,$email_subject,$email_body,$headers);
 //done. redirect to thank-you page.
-header('Location: thank-you.html');
+header('Location: index.html#thank-you');
 
 
 // Function to validate against any email injection attempts
