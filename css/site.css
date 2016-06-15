@@ -485,7 +485,8 @@ fieldset, form, label {
   width: 100%;
   /*margin: .2rem 0 0;*/
   box-sizing: border-box;
-  font-family:  "national", "helvetica neue", helvetica, sans-serif;
+  font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 1rem;
   font-weight: 100;
   color: white;
@@ -510,7 +511,7 @@ fieldset, form, label {
   position: absolute;
   font-size: .8rem;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   top: .4rem;
   left: .6rem;
   z-index: -1;
