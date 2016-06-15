@@ -43,7 +43,14 @@ body {
   background: #FFF;
 }
 
-.container {
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+#container {
   margin-left: .5rem;
   margin-top: 9rem;
   width: 99%;
@@ -60,6 +67,7 @@ body {
   background-position: center center;
   background-size: cover;
   z-index: -1;
+  transition: height .3s .2s ease-out, opacity .3s .2s linear;
 }
 
 a, a:link, a:visited, a:hover, a:active, a:focus {
@@ -331,7 +339,7 @@ footer {
   right: .5rem;
   bottom: .5rem;
   left: .5rem;
-  background-color: rgba(0,0,0,.95);
+  background-color: #2EE8AD;
   z-index: 99999;
 
   opacity: 0;
@@ -354,7 +362,8 @@ footer {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  border: solid 2px grey;
+  color: white;
+  border: solid 2px white;
   position: absolute;
   bottom: 0;
   bottom: calc(15vh - 6rem);
@@ -413,7 +422,7 @@ fieldset, form, label {
   right: 0;
   position: absolute;
   text-align: center;
-  color: #bababa;
+  color: white;
 }
 
 .form-ready .contact-default {
@@ -480,7 +489,7 @@ fieldset, form, label {
   font-size: 1rem;
   font-weight: 100;
   color: white;
-  background: rgba(64,64,64,.5);
+  background: rgba(255,255,255,.33);
   border: 0 none;
   z-index: 1;
   transition: background .3s linear;
@@ -494,7 +503,7 @@ fieldset, form, label {
 
 #contact-form input:hover,
 #contact-form textarea:hover {
-  background: rgba(128,128,128,.15);
+  background: rgba(73, 255, 197, 0.33);
 }
 
 #contact-form label {
@@ -539,7 +548,7 @@ fieldset, form, label {
 
 #contact-form input:valid + label,
 #contact-form textarea:valid + label {
-  color: #666666;
+  color: #0cad7a;
 }
 
 #contact-form button {
@@ -571,7 +580,7 @@ fieldset, form, label {
   right: -0.5rem;
   font-size: 0;
   border-radius: 50%;
-  background-color: #666666;
+  background-color: #2ec595;
   box-shadow: none;
   transition:
     all .2s cubic-bezier(.87,-.41,.19,1.44),
@@ -584,6 +593,7 @@ fieldset, form, label {
   bottom: -0.67rem;
   right: -0.67rem;
   font-size: .8rem;
+  color: #2ec595;
   background-color: white;
   box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.15);
   /*transition:
@@ -606,7 +616,93 @@ fieldset, form, label {
 
 
 
+/*--------------------*/
+/*     Animations     */
+/*--------------------*/
 
+
+.preload .profile-image {
+opacity: 0;
+height: 4rem;
+}
+
+
+.preload header {
+    padding-top: 3rem !important;
+}
+
+header {
+    padding-top: 0;
+    transition: padding-top 1.75s cubic-bezier(0, 0, 0, 1);
+}
+
+.preload h2, .preload p {
+    opacity: 0;
+    line-height: 1.7;
+}
+
+h2, p {
+    opacity: 1;
+    line-height: 1.2;
+    transition: opacity .75s linear, line-height 1.5s cubic-bezier(0, 0.33, 0, 1);
+}
+
+.preload h1 a {
+    top: -1em;
+    opacity: 0;
+}
+
+
+#container h1 a {
+    opacity: 1;
+    transition: opacity .5s .125s linear, top 1.25s .125s cubic-bezier(0,0.33,0,1);
+}
+
+
+#container.preload {
+    background-color: #2EE8AD;
+    outline: #2EE8AD 40vh solid;
+
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+#container {
+    background-color: transparent;
+    outline: transparent 0 solid;
+    transition: background-color .4s ease-in, outline .4s ease-in;
+}
+
+.preload span.green-dot {
+    color: #2EE8AD;
+    bottom: .6em;
+    left: -.3em;
+}
+
+span.green-dot {
+    color: white;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    display: inline;
+    transition: bottom .5s .667s cubic-bezier(1, 2.02, 0.66, 0.35), left .5s .667s cubic-bezier(0, 0.33, 0, 1), color 1s 2s linear;
+}
+
+.preload footer h5, .preload footer a:link {
+    margin-bottom: -1rem !important;
+    opacity: 0 !important;
+}
+
+footer h5, footer a:link, footer a.socials-item:link, footer p {
+    opacity: 1;
+    transition:
+        color .15s linear,
+        opacity .75s .5s linear,
+        margin-bottom 1s .25s cubic-bezier(0, 0, 0, 1),
+        transform .2s ease-in-out;
+}
 
 
 /*---------------------*/
@@ -615,7 +711,7 @@ fieldset, form, label {
 
 @media all and (min-width: 24em) { /* 24 x 16 = 384 */
   /* Remove inline-block from h2, adjust container accordingly */
-  .container {
+  #container {
     margin-left: .5rem;
     margin-top: 11.7rem;
     width: 99%;
@@ -630,7 +726,7 @@ fieldset, form, label {
 
 @media all and (min-width: 32em) { /* 32 x 16 = 512 */
   /* Add a column of whitespace either side of container */
-  .container {
+  #container {
     margin-left: 11%;
     margin-left: calc(10% + .5rem);
     width: 79%;
@@ -648,7 +744,7 @@ fieldset, form, label {
 
 @media all and (min-width: 40em) { /* 40 x 16 = 640 */
   /* Increase to 2 columns of whitespace either side of container */
-  .container {
+  #container {
     margin-left: 21%;
     margin-left: calc(20% + .5rem);
     width: 59%;
@@ -668,7 +764,7 @@ fieldset, form, label {
   /* Switch to wide mode, image on left, content on right
      Change colour of h1 and h2 now on white bg
      Change colour and position of copyright notice */
-  .container {
+  #container {
     margin-left: 41%;
     margin-left: calc(40% + .5rem);
     margin-top: 25vh;
@@ -681,6 +777,18 @@ fieldset, form, label {
     top: -25vh;
   }
 
+  #container.preload {
+    outline: #2EE8AD 55vw solid;
+  }
+
+  span.green-dot {
+      color: #383838;
+  }
+
+  .preload .profile-image {
+  width: 10%;
+  opacity: 0;
+  }
 
   .profile-image {
     position: fixed;
@@ -691,6 +799,7 @@ fieldset, form, label {
     height: auto;
     width: 39%;
     width: calc(40% - 1rem);
+        transition: width .3s .1s ease-out, opacity .3s .1s linear;
   }
 
 
@@ -727,7 +836,7 @@ fieldset, form, label {
 }
 
 @media all and (min-width: 50em) and (min-height: 40em) { /* WIDTH: 50 x 16 = 800 HEIGHT: 40 x 16 = 640 */
-  .container {
+  #container {
     margin-top: 33vh;
   }
 
@@ -749,7 +858,7 @@ fieldset, form, label {
 
 @media all and (min-width: 64em) { /* 64 x 16 = 1024 */
   /* Add a column of whitespace either side of container and max-width it at 640 */
-  .container {
+  #container {
     margin-left: 49%;
     margin-left: calc(50% + .5rem);
     margin-top: 33vh;

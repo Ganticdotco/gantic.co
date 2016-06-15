@@ -11,9 +11,9 @@ function Scripticles(){}
     })
   })
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var container = document.getElementsByClassName('container')
-    container.classList.remove('not-ready')
-  })
+  window.onload = function() {
+    var content = document.getElementById('container')
+    content.classList.toggle('preload')
+  }
 
 }).apply(Scripticles);
