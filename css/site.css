@@ -24,23 +24,13 @@
 
 html {
   font-size: 125%;
-  height: 100%;
-  overflow: hidden;
 }
 
 body {
-  position: relative;
-  width: 99%;
-  width: calc(100% - 1rem);
-  height: 100%;
-  overflow: auto;
-  margin: .5rem;
-
   font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.2em;
   color: #404040;
-  background: #FFF;
 }
 
 .preload * {
@@ -52,21 +42,23 @@ body {
 
 #container {
   margin-left: .5rem;
-  margin-top: 9rem;
   width: 99%;
   width: calc(100% - 1rem);
 }
 
+
+/*  MOVE STYLING FROM BODY - HEIGHT, BG COLOR ETC!!!!!  */
+
+
 .profile-image {
-  position: absolute;
-  top:0;
-  left: 0;
-  right: 0;
-  height: 14rem;
+  position: relative;
+  width: 100%;
+  height: 33vh;
   background-image: url(../img/Jai-Mitchell.jpg);
   background-position: center center;
   background-size: cover;
   z-index: -1;
+  border-radius: .2rem;
   transition: height .3s .2s ease-out, opacity .3s .2s linear;
 }
 
@@ -123,6 +115,7 @@ h1 span {
 
 h2 {
   font-size: 2.4rem;
+  margin-top: -5.2rem;
   color: white;
 }
 
@@ -310,7 +303,6 @@ footer {
   margin-right: calc(10% - .8rem);
   text-align: center;
   transition: transform .2s ease-in-out;
-  /*vertical-align: middle;*/
 }
 
 .socials-item svg {
@@ -384,14 +376,6 @@ fieldset, form, label {
   margin: 0;
   padding: 0;
   border: 0;
-  /*-webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-  -webkit-padding-before: 0;
-  -webkit-padding-start: 0;
-  -webkit-padding-end: 0;
-  -webkit-padding-after: 0;
-  border-width: 0;
-  border-color: transparent;*/
 }
 
 #overlay-contact-form #contact-form {
@@ -403,12 +387,6 @@ fieldset, form, label {
   margin-top: 40vh;
   transform: translateY(-4rem);
   transition: transform .3s cubic-bezier(.7,0,1,1);
-
-/*
-  bottom: 0;
-  transform: translateY(calc(-50vh + 6rem));
-*/
-
 }
 
 #overlay-contact-form.active #contact-form {
@@ -455,7 +433,6 @@ fieldset, form, label {
   width: 100%;
   z-index: 1;
   margin-top: 1rem;
-  /*overflow: hidden;*/
   box-shadow: none;
   transition:
     all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -467,23 +444,11 @@ fieldset, form, label {
       all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
-
-#contact-form fieldset:hover {
-  /*transform: scale(1.05);*/
-  /*border-radius: 1rem;*/
-  /*box-shadow: 0 .2rem .3rem 0 rgba(0,0,0,.25);*/
-}
-
-#contact-form fieldset.form-message:hover {
-  /*top:.1rem;*/
-}
-
 #contact-form input,
 #contact-form textarea {
   display: block;
   padding: 0 .6em 0  .6em;
   width: 100%;
-  /*margin: .2rem 0 0;*/
   box-sizing: border-box;
   font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -531,7 +496,6 @@ fieldset, form, label {
 
 #contact-form input:focus + label,
 #contact-form textarea:focus + label {
-  /*font-size: .6rem;*/
   transform: scale(.75);
   color: white;
   left: .4rem;
@@ -597,15 +561,7 @@ fieldset, form, label {
   color: #2ec595;
   background-color: white;
   box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.15);
-  /*transition:
-    box-shadow .4s cubic-bezier(.87,-.41,.19,1.44),
-    scale .4s cubic-bezier(.87,-.41,.19,1.44),
-    width .4s cubic-bezier(.87,-.41,.19,1.44),
-    height .4s cubic-bezier(.87,-.41,.19,1.44),
-    bottom .4s cubic-bezier(.87,-.41,.19,1.44),
-    right .4s cubic-bezier(.87,-.41,.19,1.44),
-    background-color .3s linear;*/
-    transition:
+  transition:
       all .4s cubic-bezier(.87,-.41,.19,1.44),
       background-color .3s linear;
 }
@@ -660,7 +616,7 @@ h2, p {
 }
 
 
-#container.preload {
+.preload #container {
     background-color: #2EE8AD;
     outline: #2EE8AD 40vh solid;
 
@@ -673,7 +629,7 @@ h2, p {
 #container {
     background-color: transparent;
     outline: transparent 0 solid;
-    transition: background-color .4s ease-in, outline .4s ease-in;
+    transition: background-color .4s cubic-bezier(1, 0, 1, 1), outline .4s cubic-bezier(1, 0, 1, 1);
 }
 
 .preload span.green-dot {
@@ -714,9 +670,12 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   /* Remove inline-block from h2, adjust container accordingly */
   #container {
     margin-left: .5rem;
-    margin-top: 11.7rem;
     width: 99%;
     width: calc(100% - 1rem);
+  }
+
+  h2 {
+    margin-top: -2.3rem;
   }
 
   h2 span {
@@ -778,7 +737,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
     top: -25vh;
   }
 
-  #container.preload {
+  .preload #container {
     outline: #2EE8AD 55vw solid;
   }
 
@@ -788,6 +747,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
 
   .preload .profile-image {
   width: 10%;
+  height: calc(100vh - 1rem);
   opacity: 0;
   }
 
@@ -797,10 +757,12 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
     left: .5rem;
     bottom: .5rem;
     right: auto;
-    height: auto;
+    height: calc(100vh - 1rem);
     width: 39%;
-    width: calc(40% - 1rem);
-        transition: width .3s .1s ease-out, opacity .3s .1s linear;
+    transition:
+      width .3s .1s ease-out,
+      opacity .3s .1s linear,
+      height .3s ease-in-out;
   }
 
 
@@ -811,6 +773,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
 
   h2 {
     color: #383838;
+    margin-top: 0;
   }
 
   .copyright {

@@ -12,7 +12,11 @@ function Scripticles(){}
   })
 
   window.onload = function() {
-    var content = document.getElementById('container')
+    setTimeout(loadAnim, 1000);
+  }
+
+  function loadAnim() {
+    var content = document.body
     content.classList.toggle('preload')
   }
 
