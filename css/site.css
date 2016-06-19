@@ -327,13 +327,14 @@ footer {
 
 #overlay-contact-form {
   position: fixed;
-  top:.5rem;
-  right: .5rem;
-  bottom: .5rem;
-  left: .5rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: .5rem white solid;
+  border-radius: .75rem;
   background-color: #2EE8AD;
   z-index: 99999;
-
   opacity: 0;
   visibility: hidden;
   transition: opacity .2s linear, visibility 0s 0.3s;
@@ -759,6 +760,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
     right: auto;
     height: calc(100vh - 1rem);
     width: 39%;
+    width: calc(40% - 1rem);
     transition:
       width .3s .1s ease-out,
       opacity .3s .1s linear,
@@ -834,7 +836,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   #overlay-contact-form {
     right: auto;
     width: 39%;
-    width: calc(40% - 1rem);
+        width: calc(40% - 1rem);
   }
 
   #overlay-contact-form #contact-form {
@@ -845,7 +847,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
 
 }
 
-@media all and (min-width: 80em) { /* 80 x 16 = 1280 */
+@media all and (min-width: 100em) { /* 80 x 16 = 1280 */
   #overlay-contact-form #contact-form {
     width: 24rem;
     left: calc(50% - 1.5rem);
@@ -859,7 +861,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 }
 
-@media all and (min-width: 80em) and (min-height: 40em) { /* WIDTH: 50 x 16 = 800 HEIGHT: 40 x 16 = 640 */
+@media all and (min-width: 100em) and (min-height: 40em) { /* WIDTH: 50 x 16 = 800 HEIGHT: 40 x 16 = 640 */
   #overlay-contact-form #contact-form {
     margin-top: 33vh;
     transform: translate(-12rem, 0);
