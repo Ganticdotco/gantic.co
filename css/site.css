@@ -38,7 +38,6 @@ body {
 
   font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 400;
-  line-height: 1.2em;
   color: #404040;
   background: #FFF;
 }
@@ -52,7 +51,7 @@ body {
 
 #container {
   margin-left: .5rem;
-  margin-top: 9rem;
+  margin-top: 8.8rem;
   width: 99%;
   width: calc(100% - 1rem);
 }
@@ -123,6 +122,7 @@ h1 span {
 
 h2 {
   font-size: 2.4rem;
+  line-height: 1.2;
   color: white;
 }
 
@@ -131,14 +131,14 @@ h2 span {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 h4, h5 {
   font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
-  font-size: .8rem;
+  font-size: 1rem;
   color: #808080;
 }
 
@@ -154,11 +154,18 @@ h5 {
 }
 
 p {
+  font-size: 1.2rem;
+  line-height: 1.25;
 }
 
 
 footer {
   margin-top: 4rem;
+}
+
+h2, p {
+    opacity: 1;
+    transition: opacity .75s linear, line-height 1.5s cubic-bezier(0, 0.33, 0, 1);
 }
 
 .contact-icon {
@@ -640,12 +647,6 @@ header {
 .preload h2, .preload p {
     opacity: 0;
     line-height: 1.7;
-}
-
-h2, p {
-    opacity: 1;
-    line-height: 1.2;
-    transition: opacity .75s linear, line-height 1.5s cubic-bezier(0, 0.33, 0, 1);
 }
 
 .preload h1 a {
