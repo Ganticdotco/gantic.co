@@ -161,12 +161,8 @@ p {
 
 footer {
   position: relative;
-  margin-top: 1rem;
-}
-
-footer.contactState {
-  position: absolute;
-  margin-top: 0;
+  margin-top: 4rem;
+  z-index: 0;
 }
 
 h2, p {
@@ -185,7 +181,7 @@ h2, p {
   margin: .2rem 1rem 1rem 0;
 }
 
-.contact-details-item.contact-details-item-socials {
+.contact-details-item-socials {
   display: block;
   margin: 1.2rem 0 3.2rem 0;
 }
@@ -243,10 +239,6 @@ h2, p {
 
 .contact-details-item:hover, .contact-details-item:active, .contact-details-item:focus {
   text-decoration: none;
-}
-
-.contactState .contact-details-item:hover, .contactState .contact-details-item:active, .contactState .contact-details-item:focus {
-  transform: scale(1.1) translateY(-.05rem);
 }
 
 .contact-details-item:hover h3, .contactState .contact-details-item h3 {
@@ -345,7 +337,6 @@ h2, p {
 
 
 
-
 /*  Copyright  */
 
 .copyright {
@@ -373,23 +364,14 @@ h2, p {
   transition: opacity .2s linear, visibility 0s 0.3s;
 }
 
-.contactFormContainer.contactState {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity .2s linear;
-}
-
 .contactFormContainer .contact-close {
   font-size: .8rem;
   text-align: center;
-  padding-top: .7rem;
+  padding-top: .8rem;
 
-  box-sizing: border-box;
   width: 3rem;
   height: 3rem;
-  border-radius: 50%;
   color: white;
-  border: solid 2px white;
   position: absolute;
   bottom: 0;
   bottom: calc(15vh - 6rem);
@@ -398,10 +380,62 @@ h2, p {
   transition: bottom .3s cubic-bezier(.7,0,1,1);
 }
 
-.contactFormContainer.contactState .contact-close {
-  bottom: 2rem;
-  bottom: calc(15vh - 4rem);
-  transition: bottom .4s cubic-bezier(0,0,0,1);
+.close {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.close:hover::before, .close:hover::after {
+  opacity: 1;
+}
+
+.close::before, .close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  border-radius: 5px;
+  background: white;
+  opacity: .67;
+  transition: transform .3s cubic-bezier(.7,0,1,1);
+}
+
+.close:hover::before {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.close:hover::after {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /*  Contact Form  */
@@ -422,26 +456,15 @@ fieldset, form, label {
 
 .contactFormContainer .contactForm {
   position: relative;
-  padding-top: 2.4rem;
+  margin-top: 10rem;
   width: 98%;
   width: calc(100% - 3rem);
   margin-left: 1.5rem;
-  margin-top: 40vh;
-  transform: translateY(-4rem);
+  z-index: 1;
+  transform: translateY(-2rem);
   transition: transform .3s cubic-bezier(.7,0,1,1);
 
-/*
-  bottom: 0;
-  transform: translateY(calc(-50vh + 6rem));
-*/
-
 }
-
-.contactFormContainer.contactState .contactForm {
-  transform: translateY(-6rem);
-  transition: transform .4s cubic-bezier(0,0,0,1);
-}
-
 
 .contactFormContainer h3 {
   left: 0;
@@ -475,24 +498,20 @@ fieldset, form, label {
   transition: top .2s ease-out, opacity .2s linear;
 }
 
+.contact-alt-title {
+  display: none;
+}
+
 .contactForm fieldset {
   display: block;
   position: relative;
   width: 100%;
-  z-index: 20;
   margin-top: 1rem;
   /*overflow: hidden;*/
   box-shadow: none;
   transition:
     all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
-.contactFormContainer.contactState fieldset {
-  margin-top: .2rem;
-  transition:
-    all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
 
 .contactForm fieldset:hover {
   /*transform: scale(1.05);*/
@@ -640,6 +659,41 @@ fieldset, form, label {
 .contactForm:valid .send-message:enabled:hover {
   transform: scale(1.1);
   box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/*---------------------*/
+/*     View states     */
+/*---------------------*/
+
+/* .contactState = the view state with the Contact Form visible */
+
+.contactState .contact-details-item-email:hover, .contactState .contact-details-item-email:active, .contactState .contact-details-item-email:focus,
+.contactState .contact-details-item-twitter:hover, .contactState .contact-details-item-twitter:active, .contactState .contact-details-item-twitter:focus {
+  transform: scale(1.1) translateY(-.05rem);
+}
+
+.contactFormContainer.contactState {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+.contactFormContainer.contactState .contact-close {
+  bottom: 2rem;
+  bottom: calc(15vh - 4rem);
+  transition: bottom .4s cubic-bezier(0,0,0,1);
+}
+
+.contactFormContainer.contactState .contactForm {
+  transform: translateY(0rem);
+  transition: transform .4s cubic-bezier(0,0,0,1);
+}
+
+.contactFormContainer.contactState fieldset {
+  margin-top: .2rem;
+  transition:
+    all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 
@@ -866,15 +920,6 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
     position: fixed;
     top: 1em;
   }
-
-  .contactFormContainer .contactForm {
-    margin-top: 33vh;
-    transform: translateY(0);
-  }
-
-  .contactFormContainer.contactState .contactForm {
-    transform: translateY(-2rem);
-  }
 }
 
 
@@ -899,6 +944,8 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
     width: 98%;
     width: calc(100% - 3rem);
     margin-left: 1.5rem;
+    padding-top: 2.4rem;
+    margin-top: 33vh;
   }
 
   footer {
@@ -922,7 +969,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 }
 
-@media all and (min-width: 80em) and (min-height: 40em) { /* WIDTH: 50 x 16 = 800 HEIGHT: 40 x 16 = 640 */
+@media all and (min-width: 80em) and (min-height: 40em) { /* WIDTH: 80 x 16 = 1280 HEIGHT: 40 x 16 = 640 */
   .contactFormContainer .contactForm {
     margin-top: 33vh;
     transform: translate(-12rem, 0);
@@ -938,5 +985,71 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   footer {
     position: absolute;
     bottom: 0;
+    top:auto;
+  }
+}
+
+@media not all and (min-width: 64em) {
+  .contactState h5 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.2em;
+  }
+
+  footer.contactState {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top:0;
+    z-index: 15;
+  }
+
+  .contactState .contact-details-item {
+    display: block;
+    text-align: center;
+  }
+
+  .contactState .contact-details-item-email .contact-icon,
+  .contactState .contact-details-item-twitter .contact-icon {
+      fill: white;
+      opacity: .85;
+  }
+
+  .contactState .contact-details-item h3 {
+    color: white;
+  }
+
+  .contactState .contact-details-item h3 span {
+    color: white;
+    opacity: .67;
+  }
+
+  .contactState .contact-alt-title {
+    display: block;
+  }
+
+  .contactState .contact-default {
+    display: none;
+  }
+
+
+  .contactState .contact-details-item-socials {
+    display: none;
+  }
+
+  .contactState .copyright {
+    display: none;
+  }
+}
+
+@media not all and (min-height: 37em) {
+  .contactFormContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 29rem;
   }
 }
