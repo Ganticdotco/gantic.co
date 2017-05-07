@@ -227,11 +227,11 @@ h2, p {
   display: none;
 }
 
-.contact-details-item-email:hover .contact-icon {
+.contact-details-item-email:hover .contact-icon, .contact-details-item-email.highlighted .contact-icon {
   fill: #2EE8AD;
 }
 
-.contact-details-item-twitter:hover .contact-icon {
+.contact-details-item-twitter:hover .contact-icon, .contact-details-item-twitter.highlighted .contact-icon {
   fill: #55acee;
 }
 
@@ -239,16 +239,22 @@ h2, p {
   text-decoration: none;
 }
 
-.contact-details-item:hover h3 {
+.contact-details-item.highlighted:hover, .contact-details-item.highlighted:active, .contact-details-item.highlighted:focus {
+  transform: scale(1.1) translateY(-.05rem);
+}
+
+.contact-details-item:hover h3, .contact-details-item.highlighted h3 {
   color: #666666;
 }
 
-.contact-details-item-email:hover h3 span {
+.contact-details-item-email:hover h3 span, .contact-details-item-email.highlighted h3 span {
   color: #2EE8AD;
+  opacity: 1;
 }
 
-.contact-details-item-twitter:hover h3 span {
+.contact-details-item-twitter:hover h3 span, .contact-details-item-twitter.highlighted h3 span {
   color: #55acee;
+  opacity: 1;
 }
 
 
@@ -274,38 +280,45 @@ h2, p {
   transition: opacity .2s linear;
 }
 
-.socials-info:hover .socials-facebook:hover .socials-icon,
-.socials-info .socials-facebook:focus .socials-icon {
+.socials-info .socials-facebook:hover .socials-icon,
+.socials-info .socials-facebook:focus .socials-icon,
+.socials-info.highlighted .socials-facebook .socials-icon {
   fill:#3B579D;
 }
 
-.socials-info:hover .socials-linkedin:hover .socials-icon,
-.socials-info .socials-linkedin:focus .socials-icon {
+.socials-info .socials-linkedin:hover .socials-icon,
+.socials-info .socials-linkedin:focus .socials-icon,
+.socials-info.highlighted .socials-linkedin .socials-icon {
   fill:#0077B5;
 }
 
-.socials-info:hover .socials-instagram:hover #insta-gradient-bg,
-.socials-info .socials-instagram:focus #insta-gradient-bg {
+.socials-info .socials-instagram:hover #insta-gradient-bg,
+.socials-info .socials-instagram:focus #insta-gradient-bg,
+.socials-info.highlighted .socials-instagram #insta-gradient-bg {
   opacity: 1;
 }
 
-.socials-info:hover .socials-dribbble:hover .socials-icon,
-.socials-info .socials-dribbble:focus .socials-icon {
+.socials-info .socials-dribbble:hover .socials-icon,
+.socials-info .socials-dribbble:focus .socials-icon,
+.socials-info.highlighted .socials-dribbble .socials-icon {
   fill:#ea4c89;
 }
 
-.socials-info:hover .socials-github:hover .socials-icon,
-.socials-info .socials-github:focus .socials-icon {
+.socials-info .socials-github:hover .socials-icon,
+.socials-info .socials-github:focus .socials-icon,
+.socials-info.highlighted .socials-github .socials-icon {
   fill:#6cc644;
 }
 
-.socials-info:hover .socials-medium:hover .socials-icon,
-.socials-info .socials-medium:focus .socials-icon {
+.socials-info .socials-medium:hover .socials-icon,
+.socials-info .socials-medium:focus .socials-icon,
+.socials-info.highlighted .socials-medium .socials-icon {
   fill:#0BE370;
 }
 
-.socials-info:hover .socials-pocket:hover .socials-icon,
-.socials-info .socials-pocket:focus .socials-icon {
+.socials-info .socials-pocket:hover .socials-icon,
+.socials-info .socials-pocket:focus .socials-icon,
+.socials-info.highlighted .socials-pocket .socials-icon {
   fill:#ef4056;
 }
 
