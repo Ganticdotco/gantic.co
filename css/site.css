@@ -181,7 +181,7 @@ h2, p {
 
 .contact-details-item.contact-details-item-socials {
   display: block;
-  margin: 1.2rem 0 1.8rem 0;
+  margin: 1.2rem 0 3.2rem 0;
 }
 
 .contact-details-item h4 {
@@ -264,7 +264,7 @@ h2, p {
   fill:#bababa;
 }
 
-.socials-info:hover .socials-item:hover,
+.socials-info .socials-item:hover,
 .socials-info .socials-item:focus {
   transform: scale(1.333) translateY(-.1rem);
 }
@@ -311,8 +311,8 @@ h2, p {
 
 .socials-info a.socials-item {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   margin-right: 9%;
   margin-right: calc(10% - .8rem);
   text-align: center;
