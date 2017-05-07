@@ -921,7 +921,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 }
 
-@media all and (min-width: 72em) and (min-height: 48em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
+@media all and (min-width: 72em) and (min-height: 62em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
   /* Lock contact details footer to bottom of page on larger screens */
   footer {
     position: absolute;
