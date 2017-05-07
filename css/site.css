@@ -1043,13 +1043,35 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 }
 
-@media not all and (min-height: 37em) {
+@media all and (max-height: 37em) {
   .contactFormContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 29rem;
+    padding-bottom: 30rem;
+  }
+
+  .contactFormContainer:after {
+    content: '';
+    position: absolute;
+    top: 30rem;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background: white;
+  }
+
+  .contactFormContainer .contact-close {
+    bottom: auto;
+    top: 25rem;
+    transition: top .3s cubic-bezier(.7,0,1,1);
+  }
+
+  .contactFormContainer.contactState .contact-close {
+      bottom: auto;
+      top: 25rem;
+      transition: top .4s cubic-bezier(0,0,0,1);
   }
 }
