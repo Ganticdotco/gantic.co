@@ -77,12 +77,12 @@ a:link {
   font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
-  color: #A5A5A5;
+  color: #99aba0;
   transition: color .15s linear;
 }
 
 a:visited {
-  color: #A5A5A5;
+  color: #99aba0;
 }
 
 a:hover, a:focus {
@@ -135,11 +135,11 @@ h3 {
 }
 
 h4, h5 {
-  font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'National book', 'Helvetica neue', helvetica, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
-  color: #808080;
+  color: #99aba0;
 }
 
 h4 {
@@ -171,7 +171,7 @@ h2, p {
 }
 
 .contact-icon {
-  fill:#bababa;
+  fill:#99aba0;
   fill-rule:evenodd;
   transition: fill .3s linear;
 }
@@ -196,7 +196,8 @@ h2, p {
 }
 
 .contact-details-item h3 span {
-  opacity: .4;
+  opacity: .8;
+  color: #99aba0;
   transition: all .2s linear;
 }
 
@@ -259,7 +260,7 @@ h2, p {
 /*  Social icon colour fills on hover  */
 
 .socials-icon {
-  fill:#808080;
+  fill:#99aba0;
   fill-rule:evenodd;
   transition: fill .2s linear;
 }
