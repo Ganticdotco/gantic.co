@@ -4,19 +4,20 @@ if(!isset($_POST['submit']))
 	//This page should not be accessed directly. Need to submit the form.
 	echo "error; you need to submit the form!";
 }
-$subject = $_POST['subject'];
-$from = $_POST['from'];
+$name = $_POST['name'];
+$email = $_POST['email'];
 $message = $_POST['message'];
 
-if(IsInjected($subject)||IsInjected($from)||IsInjected($message))
+if(IsInjected($name)||IsInjected($email)||IsInjected($message))
 {
     echo "Chill out on the non-wordy text things! You're making my security jumpy!";
     exit;
 }
 
 $email_from = 'form-submission@gantic.co';
-$email_subject = "Gantic.co form: $subject";
-$email_body = "From: $from.\n".
+$email_subject = "Gantic.co contact form message from: $name";
+$email_body = "From: \n$name.\n".
+		"Email:: \n$email.\n".
     "Message:\n $message";
 
 $to = "jai@gantic.co";
