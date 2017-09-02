@@ -11,6 +11,9 @@ function Scripticles(){}
       for (var i = 0; i < highlightCount; i++) {
         highlights[i].classList.toggle('contactState');
       }
+      var scrollTop = function() {
+        window.scrollTo(0, 0);
+      };
     })
   })
 

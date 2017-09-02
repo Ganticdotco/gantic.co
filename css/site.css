@@ -77,16 +77,16 @@ a:link {
   font-family: 'National bold', 'Helvetica neue', helvetica, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
-  color: #99aba0;
+  color: #5CC1B0;
   transition: color .15s linear;
 }
 
 a:visited {
-  color: #99aba0;
+  color: #5CC1B0;
 }
 
 a:hover, a:focus {
-  color: #2EE8AD;
+  color: #81E2D1;
   transition: color .3s linear;
   text-decoration: underline;
 }
@@ -117,7 +117,7 @@ h1, h1 a:link, h1 a:visited, h1 a:hover, h1 a:active, h1 a:focus {
 }
 
 h1 span {
-  opacity: .333;
+  color: #5CC1B0;
 }
 
 h2 {
@@ -139,7 +139,7 @@ h4, h5 {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
-  color: #99aba0;
+  color: #5CC1B0;
 }
 
 h4 {
@@ -171,7 +171,7 @@ h2, p {
 }
 
 .contact-icon {
-  fill:#99aba0;
+  fill:#5CC1B0;
   fill-rule:evenodd;
   transition: fill .3s linear;
 }
@@ -197,7 +197,7 @@ h2, p {
 
 .contact-details-item h3 span {
   opacity: .8;
-  color: #99aba0;
+  color: #5CC1B0;
   transition: all .2s linear;
 }
 
@@ -231,7 +231,7 @@ h2, p {
 }
 
 .contact-details-item-email:hover .contact-icon, .contactState .contact-details-item-email .contact-icon {
-  fill: #2EE8AD;
+  fill: #81E2D1;
 }
 
 .contact-details-item-twitter:hover .contact-icon, .contactState .contact-details-item-twitter .contact-icon {
@@ -247,7 +247,7 @@ h2, p {
 }
 
 .contact-details-item-email:hover h3 span, .contactState .contact-details-item-email h3 span {
-  color: #2EE8AD;
+  color: #81E2D1;
   opacity: 1;
 }
 
@@ -260,7 +260,7 @@ h2, p {
 /*  Social icon colour fills on hover  */
 
 .socials-icon {
-  fill:#99aba0;
+  fill:#5CC1B0;
   fill-rule:evenodd;
   transition: fill .2s linear;
 }
@@ -357,7 +357,7 @@ h2, p {
   right: .5rem;
   bottom: .5rem;
   left: .5rem;
-  background-color: #2EE8AD;
+  background-color: #5CC1B0;
   z-index: 10;
 
   opacity: 0;
@@ -595,7 +595,7 @@ fieldset, form, label {
 
 .contactForm input:valid + label,
 .contactForm textarea:valid + label {
-  color: #0cad7a;
+  color: #378B7D;
 }
 
 .contactForm button {
@@ -627,7 +627,7 @@ fieldset, form, label {
   right: -0.25rem;
   font-size: 0;
   border-radius: 50%;
-  background-color: #2ec595;
+  background-color: #378B7D;
   box-shadow: none;
   z-index: 25;
   transition:
@@ -641,7 +641,7 @@ fieldset, form, label {
   bottom: -0.67rem;
   right: -0.67rem;
   font-size: .8rem;
-  color: #2ec595;
+  color: #378B7D;
   background-color: white;
   box-shadow: .0 .2rem .3rem 0 rgba(0, 0, 0, 0.15);
   /*transition:
@@ -737,8 +737,8 @@ header {
 
 
 #container.preload {
-    background-color: #2EE8AD;
-    outline: #2EE8AD 40vh solid;
+    background-color: #5CC1B0;
+    outline: #5CC1B0 40vh solid;
 
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -753,7 +753,7 @@ header {
 }
 
 .preload span.green-dot {
-    color: #2EE8AD;
+    color: #5CC1B0;
     bottom: .6em;
     left: -.3em;
 }
@@ -855,7 +855,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 
   #container.preload {
-    outline: #2EE8AD 55vw solid;
+    outline: #5CC1B0 55vw solid;
   }
 
   span.green-dot {
@@ -981,7 +981,7 @@ footer h5, footer a:link, footer a.socials-item:link, footer p {
   }
 }
 
-@media all and (min-width: 72em) and (min-height: 62em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
+@media all and (min-width: 72em) and (min-height: 74em) { /*  WIDTH: 72 x 16 = 1152, HEIGHT: 48 x 64 = 768 */
   /* Lock contact details footer to bottom of page on larger screens */
   footer {
     position: absolute;
